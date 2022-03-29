@@ -1,1 +1,16 @@
-body {background-color: aqua;}
+body {
+    display: flex;
+    flex-flow:column wrap;
+    align-items: center;
+    background-color: aqua;
+}
+
+button {
+    width: 5rem;
+    padding: 1rem;
+    margin: 2rem;
+}
+
+.timer-display {
+    font-size: 2rem;
+}
