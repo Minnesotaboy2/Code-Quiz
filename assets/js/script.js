@@ -18,5 +18,13 @@ startBtn.addEventListener('click', function () {
             clearInterval(timer)
         }
     }, 1000)
+})
 
+var wrongAnswer = document.querySelector('.wrong-answer')
+var rightAnswer = document.querySelector('.correct-answer')
+
+
+wrongAnswer.addEventListener('click', function (){
+    var questionResult = document.getElementsByClassName('.question-result')
+    questionResult.textContent = 'Incorrect'
 })

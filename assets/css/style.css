@@ -5,7 +5,7 @@ body {
     background-color: aqua;
 }
 
-button {
+#start-button {
     width: 5rem;
     padding: 1rem;
     margin: 2rem;
@@ -13,4 +13,14 @@ button {
 
 .timer-display {
     font-size: 2rem;
+}
+
+section{
+    font-size: 2rem;
+}
+section div button {
+    margin: 1rem;
+    padding: 1rem;
+    display: inline-flex;
+
 }
