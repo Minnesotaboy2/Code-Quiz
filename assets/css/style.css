@@ -24,6 +24,9 @@ section div button {
     display: inline-flex;
 
 }
+h1 {
+    text-align: center;
+}
 
 .question-result {
     text-align: center;
