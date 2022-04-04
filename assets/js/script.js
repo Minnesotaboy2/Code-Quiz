@@ -18,7 +18,13 @@ startBtn.addEventListener('click', function () {
         startBtn.style.visibility = 'hidden'
         if (secondsLeft < 0) {
             timerDisplay.textContent = 'Game Over'
+            question1.style.visibility = 'hidden'
+            question2.style.visibility = 'hidden'
+            question3.style.visibility = 'hidden'
+            next1.style.visibility = 'hidden'
+            next2.style.visibility = 'hidden'
             clearInterval(timer)
+
             // TO DO DISPLAY FINISHED SCORE, HIDE EVERYTHING ELSE, ENTER AND SHOW SCORES
         }
     }, 1000)
@@ -33,6 +39,11 @@ var question3 = document.querySelector('.question-3')
 question1.style.visibility = 'hidden'
 question2.style.visibility = 'hidden'
 question3.style.visibility = 'hidden'
+
+
+var score = document.querySelector('score')
+score = 0
+localStorage.setItem('score', 'score.value')
 
 var next1 = document.querySelector('#next-1')
 var next2 = document.querySelector('#next-2')
@@ -80,7 +91,11 @@ function correct1() {
     wrongAnswer3.style.visibility = 'hidden'
     rightAnswer1.style.visibility = 'hidden'
     next1.style.visibility = 'visible'
+    score.value = score ++
+    console.log(score);
+
 }
+
 function incorrect1() {
     questionResult1.textContent = 'Incorrect'
     questionResult1.style.color = 'red'
@@ -110,6 +125,9 @@ function correct2() {
     wrongAnswer6.style.visibility = 'hidden'
     rightAnswer2.style.visibility = 'hidden'
     next2.style.visibility = 'visible'
+    score.value = score++
+    console.log(score);
+    
 }
 function incorrect2() {
     questionResult2.textContent = 'Incorrect'
@@ -140,6 +158,9 @@ function correct3() {
     wrongAnswer9.style.visibility = 'hidden'
     rightAnswer3.style.visibility = 'hidden'
     // next3.style.visibility = 'visible'
+    score.value = score++
+    console.log(score);
+    
 }
 function incorrect3() {
     questionResult3.textContent = 'Incorrect'
@@ -151,3 +172,10 @@ function incorrect3() {
     secondsLeft = secondsLeft-5
     // next3.style.visibility = 'visible'
 }
+
+// var score = document.getElementById('score')
+// score = 0
+// function scoring() {
+// // var currentScore
+// score.value = score ++
+// }

@@ -26,6 +26,10 @@ Correct answer will display "Correct" in green.
 
 After answering the answer buttons disapear and the "next" button appears, clicking it pulls up the next question.
 
+When timer reaches 0 questions and buttons are hidden.
+
+Score is up and displayed in console.
+
 #
 # LEFT TO DO!!!!!!!!!!!!!!!!!!
 
