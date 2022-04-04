@@ -105,10 +105,10 @@ rightAnswer2.addEventListener('click', correct2)
 function correct2() {
     questionResult2.textContent = 'Correct'
     questionResult2.style.color = 'green'
-    wrongAnswer1.style.visibility = 'hidden'
-    wrongAnswer2.style.visibility = 'hidden'
-    wrongAnswer3.style.visibility = 'hidden'
-    rightAnswer1.style.visibility = 'hidden'
+    wrongAnswer4.style.visibility = 'hidden'
+    wrongAnswer5.style.visibility = 'hidden'
+    wrongAnswer6.style.visibility = 'hidden'
+    rightAnswer2.style.visibility = 'hidden'
     next2.style.visibility = 'visible'
 }
 function incorrect2() {
@@ -150,5 +150,4 @@ function incorrect3() {
     rightAnswer3.style.visibility = 'hidden'
     secondsLeft = secondsLeft-5
     // next3.style.visibility = 'visible'
-
 }
