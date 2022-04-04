@@ -37,3 +37,7 @@ h1 {
     display: flex;
     justify-content: center;
 }
+
+.questions {
+    text-align: center;
+}
