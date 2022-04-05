@@ -1,14 +1,16 @@
-// when I hit start a timer starts and the quiz starts
-// if answer is right score will be increased by one
-// if wrong it will shorten remaining time left on the timer
-// after quiz allow recording of scores with name and show previous scores
-
 var secondsLeft = 30
 var timerDisplay = document.querySelector('.time-left')
 var startBtn = document.querySelector('#start-button')
 var questionResult1 = document.querySelector('.question-result-1')
 var questionResult2 = document.querySelector('.question-result-2')
 var questionResult3 = document.querySelector('.question-result-3')
+
+saved()
+
+function saved() {
+var score = localStorage.getItem(score)
+var initials = localStorage.getItem('initials')
+}
 
 startBtn.addEventListener('click', function () {
     start()
@@ -24,11 +26,14 @@ startBtn.addEventListener('click', function () {
             next1.style.visibility = 'hidden'
             next2.style.visibility = 'hidden'
             clearInterval(timer)
-
-            // TO DO DISPLAY FINISHED SCORE, HIDE EVERYTHING ELSE, ENTER AND SHOW SCORES
         }
     }, 1000)
 })
+
+score = 0
+
+// localStorage.setItem('score', score)
+
 function start() {
     question1.style.visibility = 'visible'
 }
@@ -40,11 +45,6 @@ question1.style.visibility = 'hidden'
 question2.style.visibility = 'hidden'
 question3.style.visibility = 'hidden'
 
-
-var score = document.querySelector('score')
-score = 0
-localStorage.setItem('score', 'score.value')
-
 var next1 = document.querySelector('#next-1')
 var next2 = document.querySelector('#next-2')
 var next3 = document.querySelector('#next-3')
@@ -54,14 +54,14 @@ next3.style.visibility = 'hidden'
 
 next1.addEventListener('click', Next1)
 function Next1() {
-    question1.style.visibility = 'hidden'
+    // question1.style.visibility = 'hidden'
     question2.style.visibility = 'visible'
     next1.style.visibility = 'hidden'
 }
 
 next2.addEventListener('click', Next2)
 function Next2() {
-    question2.style.visibility = 'hidden'
+    // question2.style.visibility = 'hidden'
     question3.style.visibility = 'visible'
     next2.style.visibility = 'hidden'
 }
@@ -91,9 +91,10 @@ function correct1() {
     wrongAnswer3.style.visibility = 'hidden'
     rightAnswer1.style.visibility = 'hidden'
     next1.style.visibility = 'visible'
-    score.value = score ++
-    console.log(score);
 
+    score++
+    scoring.textContent = score
+    localStorage.setItem('score', score)
 }
 
 function incorrect1() {
@@ -103,7 +104,7 @@ function incorrect1() {
     wrongAnswer2.style.visibility = 'hidden'
     wrongAnswer3.style.visibility = 'hidden'
     rightAnswer1.style.visibility = 'hidden'
-    secondsLeft = secondsLeft-5
+    secondsLeft = secondsLeft - 5
     next1.style.visibility = 'visible'
 }
 
@@ -125,9 +126,9 @@ function correct2() {
     wrongAnswer6.style.visibility = 'hidden'
     rightAnswer2.style.visibility = 'hidden'
     next2.style.visibility = 'visible'
-    score.value = score++
-    console.log(score);
-    
+    score++
+    scoring.textContent = score
+    localStorage.setItem('score', score)
 }
 function incorrect2() {
     questionResult2.textContent = 'Incorrect'
@@ -136,7 +137,7 @@ function incorrect2() {
     wrongAnswer5.style.visibility = 'hidden'
     wrongAnswer6.style.visibility = 'hidden'
     rightAnswer2.style.visibility = 'hidden'
-    secondsLeft = secondsLeft-5
+    secondsLeft = secondsLeft - 5
     next2.style.visibility = 'visible'
 }
 
@@ -158,9 +159,9 @@ function correct3() {
     wrongAnswer9.style.visibility = 'hidden'
     rightAnswer3.style.visibility = 'hidden'
     // next3.style.visibility = 'visible'
-    score.value = score++
-    console.log(score);
-    
+    score++
+    scoring.textContent = score
+    localStorage.setItem('score', score)
 }
 function incorrect3() {
     questionResult3.textContent = 'Incorrect'
@@ -169,13 +170,24 @@ function incorrect3() {
     wrongAnswer8.style.visibility = 'hidden'
     wrongAnswer9.style.visibility = 'hidden'
     rightAnswer3.style.visibility = 'hidden'
-    secondsLeft = secondsLeft-5
+    secondsLeft = secondsLeft - 5
     // next3.style.visibility = 'visible'
 }
 
-// var score = document.getElementById('score')
-// score = 0
-// function scoring() {
-// // var currentScore
-// score.value = score ++
-// }
+var scoring = document.querySelector('#scoring')
+var saveBtn = document.querySelector('#save-btn')
+
+saveBtn.addEventListener('click', function(event) {
+event.preventDefault()
+var scoring = document.querySelector('#scoring').value
+var initials = document.querySelector('#initials').value
+var blank = document.querySelector('#blank')
+
+if (initials === '') {
+    blank.textContent('Please enter initials')
+}
+
+localStorage.setItem('initials', initials)
+localStorage.setItem('score', score)
+saved()
+})
