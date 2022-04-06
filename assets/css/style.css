@@ -41,3 +41,19 @@ h1 {
 .questions {
     text-align: center;
 }
+
+#previous {
+    font-size: 2pc;
+    display: flex;
+    flex-direction: row;
+}
+
+.score-list {
+    position: relative;
+    right: -7px;
+}
+
+.initials-list {
+    position: relative;
+    right: -14px;
+}

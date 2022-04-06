@@ -1,15 +1,3 @@
-
-# LEFT TO DO!!!!!!!!!!!!!!!!!!
-
-DISPLAYING PREVIOUS SCORES AND INITIALS AFTER GAME, WILL LIKELY BE ARRAY WITH JSON
-
-ADD ACTUAL CODING RELATED QUESTIONS AND MORE THAN THE SAMPLES I HAVE RIGHT NOW
-
-QUESTIONS STAY IN THE SAME PLACE AS EACH OTHER
-
-COMMENTING/TIDYING UP/OPTIMIZING, IF NECESSARY, IT PROBABLY WILL BE BUT I PROBABLY WONT WORRY MYSELF ABOUT IT
-
-#
 # Code-Quiz
 
 Live Page: https://minnesotaboy2.github.io/Code-Quiz/
@@ -26,15 +14,17 @@ After answering the answer buttons disapear and the "next" button appears, click
 
 When timer reaches 0 questions and buttons are hidden.
 
-Score is up and displayed in console.
+Score is updated and can be saved with initials, most recent score will be displayed at the bottom uppon clicking "save score" and will be updated upon refresh or closing the tab and opening it.
 
 #
 # LEFT TO DO!!!!!!!!!!!!!!!!!!
 
-DISPLAYING PREVIOUS SCORES AND INITIALS AFTER GAME, WILL LIKELY BE ARRAY WITH JSON
 
-ADD ACTUAL CODING RELATED QUESTIONS AND MORE THAN THE SAMPLES I HAVE RIGHT NOW
+
+ADD ACTUAL QUESTIONS AND MORE THAN THE SAMPLES I HAVE RIGHT NOW
 
 QUESTIONS STAY IN THE SAME PLACE AS EACH OTHER
+
+SAVE SCORE CONDITIONAL AND PLACEMENT
 
 COMMENTING/TIDYING UP/OPTIMIZING, IF NECESSARY, IT PROBABLY WILL BE BUT I PROBABLY WONT WORRY MYSELF ABOUT IT

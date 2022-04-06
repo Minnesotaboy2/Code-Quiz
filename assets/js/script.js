@@ -4,12 +4,22 @@ var startBtn = document.querySelector('#start-button')
 var questionResult1 = document.querySelector('.question-result-1')
 var questionResult2 = document.querySelector('.question-result-2')
 var questionResult3 = document.querySelector('.question-result-3')
+var scoreList = document.querySelector('.score-list')
+var initialsList = document.querySelector('.initials-list')
 
 saved()
+previousScore()
 
 function saved() {
 var score = localStorage.getItem(score)
 var initials = localStorage.getItem('initials')
+}
+
+function previousScore() {
+var score = localStorage.getItem('score')
+var initials = localStorage.getItem('initials')
+scoreList.textContent = score + ':'
+initialsList.textContent = initials
 }
 
 startBtn.addEventListener('click', function () {
@@ -66,6 +76,7 @@ function Next2() {
     next2.style.visibility = 'hidden'
 }
 
+// next 3 button for adding future questions
 // next3.addEventListener('click', Next3)
 // function Next3() {
 //     question3.style.visibility = 'hidden'
@@ -177,17 +188,14 @@ function incorrect3() {
 var scoring = document.querySelector('#scoring')
 var saveBtn = document.querySelector('#save-btn')
 
+
 saveBtn.addEventListener('click', function(event) {
 event.preventDefault()
 var scoring = document.querySelector('#scoring').value
 var initials = document.querySelector('#initials').value
-var blank = document.querySelector('#blank')
-
-if (initials === '') {
-    blank.textContent('Please enter initials')
-}
 
 localStorage.setItem('initials', initials)
 localStorage.setItem('score', score)
 saved()
 })
+
